@@ -1,0 +1,32 @@
+{
+  "name": "event-driven-microservice",
+  "version": "1.0.0",
+  "description": "Event-driven microservice with Apache Kafka producer and consumer",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest --detectOpenHandles",
+    "test:unit": "jest tests/unit --detectOpenHandles",
+    "test:integration": "jest tests/integration --detectOpenHandles --runInBand",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "kafka",
+    "event-driven",
+    "microservice"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "kafkajs": "^2.2.4",
+    "uuid": "^9.0.0",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "supertest": "^6.3.3",
+    "nodemon": "^2.0.22"
+  }
+}
