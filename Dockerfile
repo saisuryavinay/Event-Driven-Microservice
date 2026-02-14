@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci --only=production
+RUN npm install --omit=dev
 
 # Copy application code
 COPY src ./src
@@ -20,4 +20,4 @@ HEALTHCHECK --interval=10s --timeout=5s --retries=5 \
   CMD node -e "require('http').get('http://localhost:3000/health', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
 
 # Start application
-CMD ["node", "src/index.js"]
+CMD ["sh", "-c", "sleep 15 && node src/index.js"]
